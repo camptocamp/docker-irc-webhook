@@ -30,7 +30,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "%{HOOKS_SECRET}",
+            "secret": "%{WEBHOOK_SECRET}",
             "parameter":
             {
               "source": "header",
@@ -42,7 +42,7 @@
           "match":
           {
             "type": "value",
-            "value": "%{HOOKS_SECRET}",
+            "value": "%{WEBHOOK_SECRET}",
             "parameter":
             {
               "source": "payload",
