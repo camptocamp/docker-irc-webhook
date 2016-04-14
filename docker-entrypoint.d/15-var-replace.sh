@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/etc/webhooks/*.json"
+DIR="/etc/webhook/*.json"
 
 grep -hoR "%{[A-Za-z0-9_]\+}" $DIR | sort | uniq | while read k; do
   trim=${k%\}}
