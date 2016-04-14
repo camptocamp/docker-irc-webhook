@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/etc/webhooks/*.json /notify-irc.sh"
+DIR="/etc/webhooks/*.json"
 
 grep -hoR "%{[A-Za-z0-9_]\+}" $DIR | sort | uniq | while read k; do
   trim=${k%\}}

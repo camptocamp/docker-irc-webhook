@@ -6,7 +6,7 @@ refname=$3
 user=$4
 
 branch=$(git rev-parse --symbolic --abbrev-ref $refname)
-if echo "%{IRC_NOTIFY_BRANCHES}" | grep -q $branch ; then
+if echo "${IRC_NOTIFY_BRANCHES}" | grep -q $branch ; then
   if expr "$oldrev" : '0*$' >/dev/null; then
     exit 0
   elif expr "$newrev" : '0*$' >/dev/null; then
@@ -23,8 +23,8 @@ if echo "%{IRC_NOTIFY_BRANCHES}" | grep -q $branch ; then
 
     maxcount=6
 
-    chan="%{IRC_CHAN}"
-    server="%{IRC_SERVER}"
+    chan="${IRC_CHAN}"
+    server="${IRC_SERVER}"
 
     echo "/j ${chan}" > /tmp/irc/$server/in
     sleep 1
